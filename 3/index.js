@@ -1,42 +1,20 @@
-const charactersList = document.getElementById('charactersList');
-const searchBar = document.getElementById('searchBar');
-let hpCharacters = [];
-
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value.toLowerCase();
-
-    const filteredCharacters = hpCharacters.filter((character) => {
-        return (
-            character.name.toLowerCase().includes(searchString) ||
-            character.house.toLowerCase().includes(searchString)
-        );
-    });
-    displayCharacters(filteredCharacters);
-});
-
-const loadCharacters = async () => {
-    try {
-        const res = await fetch('http://gateway.marvel.com/v1/public/comics');
-        hpCharacters = await res.json();
-        displayCharacters(hpCharacters);
-    } catch (err) {
-        console.error(err);
+function character() {
+    let urlQueryParameters = new URLSearchParams(window.location.search),
+      queryParameterName = urlQueryParameters.get("name"),
+      name = document.getElementById("name").value;
+    
+    // console.log(name);
+  
+    if (queryParameterName !== null && queryParameterName !== "") {
+      document.getElementById("name").value = queryParameterName;
+      connection();
+    } else if (name !== null && name !== "") {
+      document
+        .getElementById("connectionForm")
+        .addEventListener("submit", connection);
+    } else {
+      document.getElementById("characterSection").innerHTML =
+        '<h2 id="characterMainTitle">Enter search term above...</h2>';
     }
-};
-
-const displayCharacters = (characters) => {
-    const htmlString = characters
-        .map((character) => {
-            return `
-            <li class="character">
-                <h2>${character.name}</h2>
-                <p>House: ${character.house}</p>
-                <img src="${character.image}"></img>
-            </li>
-        `;
-        })
-        .join('');
-    charactersList.innerHTML = htmlString;
-};
-
-loadCharacters();
+  }
+  

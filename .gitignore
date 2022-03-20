@@ -47,4 +47,14 @@ Temporary Items
 .history
 .ionide
 
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
 /connection
