@@ -7,8 +7,67 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <p>Welcome!</p>
+
+<body style="text-align:center;">
+	<h1 style="color:rgb(128, 36, 0);">
+			Lu Group 5
+	</h1>
+	<h2>Search word from input paragraph</h2>
+
+    <div class="inputContainer">
+        <div class="searchText">
+            <p>
+                Enter the text in which you want to search
+            </p>
+        
+            <input type="text" id="inputText" placeholder="Some Text.">
+            <button type="button" onclick="myFunction()">Try it</button>
+
+            <p id="EnteredText" value="enteredtext"></p>
+
+            <button type="button" onclick="addFunction()">add to search paragraph</button>
+
+        </div>
+        <div class="searchWord">
+            <p>
+                Enter the word you want to search
+            </p>
+        
+            <input type="text" id="searchWord" value="" placeholder="word you want to search.">
+            <button type="button" onclick="search()">Search it</button>
+        </div>
+        
+    </div>
+
+    <div class="mainTextContainer">
+        <h4>Search paragraph </h4>
+            <p id="mainText"></p>
+    </div>
+    
+    <h2> or add file from your device. </h2>
+   
+    <div class="fileToadd">
+
+             
+        <div class="inputfileContainer">
+            click here to add Textfile (.txt) file
+            <input type="file" name="inputfile"
+                id="inputfile">
+        <br>
+        </div>
+    
+        
+        <div class="pdfContainer">
+            click here to add PDFfile (.pdf) file
+            <input type="file" id="file-id" name="file_name" onchange="ExtractText();">
+        </div> 
+    </div>
+
+   
+	
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.10.100/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.entry.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.10.100/pdf.worker.min.js"></script>
     <script src="index.js"></script>
 </html>

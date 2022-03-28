@@ -3,6 +3,8 @@ import StateTutorial from './UseState/StateTutorial';
 import StateTutorial2 from './UseState/StateTutorial2';
 import Reducer from './UseReducer/Reducer';
 import Effect from './UseEffect/Effect';
+import ImperativeHandle from './UseImperative/ImperativeHandle';
+import ContextT from './UseContext/ContextT';
 
 function App() {
   return (
@@ -11,7 +13,10 @@ function App() {
     {/* <StateTutorial/>
     <StateTutorial2 /> */}
     {/* <Reducer/> */}
-    <Effect/>
+    {/* <Effect/> */}
+    {/* <ImperativeHandle /> */}
+    <ContextT/>
+
     </div>
   );
 }
