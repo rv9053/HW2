@@ -4,5 +4,24 @@
 
 .text {
     margin: 10px;
+    font-size: large;
+    font-weight: bolder;
+    color: brown;
+    padding: auto;
+}
 
+.number {
+    margin: 10px;
+    font-size: large;
+    font-weight: bolder;
+    color: brown;
+    padding: auto;
+}
+
+.ans {
+    margin: 10px;
+    font-size: large;
+    font-weight: bolder;
+    color: brown;
+    padding: auto;
 }
