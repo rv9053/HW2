@@ -19,14 +19,15 @@ function search(){
     // x = searchword.value
     // let searchM = mainText.search(x);
 
-    if (mainText.innerText.toLowerCase().includes(searchword.value.toLowerCase())) {
+    if (mainText.innerText.includes(searchword.value)) {
         const para = document.createElement("p");
         para.innerText = "Found it";
         document.body.appendChild(para);
-        console.log('found it')
+        alert('found it')
     } else {
-        console.log('no ')
+        alert("didn't found it")
     }
+
 
     
 }
